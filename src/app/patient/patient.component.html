@@ -1,0 +1,47 @@
+<div class="mt-4 analysis-card" *ngFor="let patient of allPatients">
+  <div class="left-part mr-1" [ngClass]="{'left-part__border': leftPartBorder(patient.id)}"
+    (click)="onPreviewDetails(patient.id)">
+    <div class="mt-3 ml-4 left-part--name">{{patient.name}}</div>
+    <div class="mt-1 ml-4 analysis-element">{{patient.illness}}</div>
+    <div class="mt-1 ml-4 left-part--schedule">
+      <span class="mt-1 ml-5 analysis-element">Last visit: {{patient.lastVisit}}</span>
+      <span class="mt-1 ml-5 analysis-element">Next visit: {{patient.nextVisit}}</span>
+
+    </div>
+    <div class="mt-1 mb-2 ml-4 text-primary left-part--status">Status: {{patient.status}}</div>
+
+  </div>
+  <div class="ml-1 right-part" [ngClass]="{'right-part__display': displayRightPart(patient.id)}">
+    <div class="mt-3 ml-4 left-part--name">{{patient.name}}</div>
+    <div class="mt-1 ml-4 analysis-element">{{patient.illness}}</div>
+    <div class="mt-1 ml-4 left-part--schedule">
+      <span class="mt-1 ml-5 analysis-element">Last visit: {{patient.lastVisit}}</span>
+      <span class="mt-1 ml-5 analysis-element">Next visit: {{patient.nextVisit}}</span>
+
+    </div>
+    <div class="mt-1 ml-4 analysis-element">Medical history: {{patient.medicalHistory}}</div>
+    <div class="mt-1 ml-4 analysis-element">Previous surgeries:
+      <ul>
+        <li *ngFor="let surgery of patient.previousSurgeries">{{surgery}}</li>
+      </ul>
+    </div>
+    <div class="mt-1 ml-4 analysis-element">Allergic to:
+      <ul>
+        <li *ngFor="let allergic of patient.allergicTo">{{allergic}}</li>
+      </ul>
+    </div>
+    <div class="mt-1 ml-4 analysis-element">Contacts:
+      <ul>
+        <li *ngFor="let contact of patient.contacts">{{contact}}</li>
+      </ul>
+    </div>
+    <div class="mt-1 ml-4 analysis-element">Upon Emergency call:
+      <ul>
+        <li *ngFor="let relative of patient.uponEmergencyCall">{{relative.name}}: &nbsp;&nbsp;{{relative.phone}}</li>
+      </ul>
+    </div>
+
+    <div class="mt-1 mb-2 ml-4 text-primary left-part--status">Status: {{patient.status}}</div>
+
+  </div>
+</div>

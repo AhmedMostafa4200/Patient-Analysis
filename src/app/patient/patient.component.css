@@ -1,0 +1,50 @@
+.analysis-card {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  width: 98%;
+  margin: 0 auto;
+}
+
+.analysis-element {
+  color: rgb(0, 20, 51);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: -0.37px;
+  line-height: 19px;
+}
+
+.left-part {
+  flex: 0 0 50%;
+  border: 1px solid gray;
+  min-width: 45%;
+  height: fit-content;
+  cursor: pointer;
+  box-shadow: 0 0 10px #888888;
+}
+.left-part--name,
+.left-part--status {
+  color: rgb(0, 20, 51);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.4px;
+  line-height: 24px;
+}
+.left-part__border {
+  box-shadow: 0 0 10px #267bff;
+}
+
+.right-part {
+  flex: 0 0 50%;
+  min-width: 45%;
+  border: 1px solid gray;
+  box-shadow: 0 0 10px #888888;
+  display: none;
+  position: absolute;
+  right: 25px;
+  /* -webkit-box-shadow: 0 0 10px #888888; */
+}
+
+.right-part__display {
+  display: block;
+}
